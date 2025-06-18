@@ -4,6 +4,7 @@ interface Props {
   data: any
   path: string
   title?: string
+  display?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -19,8 +20,8 @@ const blocks = computed(() => {
 </script>
 
 <template>
-  <div class="bg-yellow-100 p-4 mb-4 text-sm border-l-4 border-yellow-500">
-    <strong>🐛 {{ title }}:</strong><br>
+  <div v-if="display" class="bg-yellow-100 p-4 mb-4 text-sm border-l-4 border-yellow-500">
+    <strong>🐛 Title :  {{ title }}</strong><br>
     Path: {{ path }}<br>
     Page found: {{ !!data }}<br>
     Has meta: {{ !!data?.meta }}<br>
@@ -38,10 +39,32 @@ const blocks = computed(() => {
 
     <details class="mt-2" v-if="blocks.length > 0">
       <summary class="cursor-pointer hover:text-yellow-800">📦 Détail des blocs</summary>
-      <div class="mt-2 space-y-2">
-        <div v-for="(block, index) in blocks" :key="index" class="bg-white p-2 rounded border">
-          <strong>Bloc {{ index + 1 }}:</strong> {{ (block as any).type }}<br>
-          <small class="text-gray-600">{{ Object.keys(block).join(', ') }}</small>
+      <div class="mt-2 space-y-4">
+        <div
+            v-for="(block, index) in blocks"
+            :key="index"
+            class="bg-white p-4 rounded-xl border shadow-sm"
+        >
+          <p class="text-sm font-semibold text-gray-700 mb-2">
+            Bloc {{ index + 1 }} – <span class="text-blue-600">{{ block.type }}</span>
+          </p>
+
+          <div class="text-sm text-gray-800 space-y-1">
+            <div
+                v-for="(value, key) in block"
+                :key="key"
+                class="flex flex-wrap gap-1"
+            >
+              <span class="font-medium text-gray-600">{{ key }}:</span>
+              <span class="break-all">
+            {{
+                  typeof value === 'object'
+                      ? JSON.stringify(value)
+                      : value
+                }}
+          </span>
+            </div>
+          </div>
         </div>
       </div>
     </details>

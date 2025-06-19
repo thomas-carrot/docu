@@ -11,16 +11,16 @@ if (!page.value) {
 }
 
 const layoutToUse = page.value?.meta?.layout || 'default'
-setPageLayout(layoutToUse)
 
-useSeoMeta({
-  title: page.value?.title ? `${page.value.title}` : 'Nümorning',
-  description: page.value?.description
+onMounted(() => {
+  if (layoutToUse !== 'default') {
+    setPageLayout(layoutToUse)
+  }
 })
 </script>
 
 <template>
   <div>
-    <ContentRenderer :value="page" />
+    <ContentRenderer v-if="page" :value="page" />
   </div>
 </template>

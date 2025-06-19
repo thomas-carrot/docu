@@ -1,19 +1,38 @@
 ---
-title: "Bienvenue sur notre site"
-description: "Découvrez nos services exceptionnels"
-image: "/hero-image.jpg"
+title: "Contactez-nous"
+description: "Nous sommes là pour répondre à toutes vos questions."
 seo:
-  title: "Bienvenue sur notre site - Services exceptionnels"
-  description: "Découvrez nos services exceptionnels et notre expertise. Nous vous accompagnons dans tous vos projets avec professionnalisme et qualité."
+  title: "Contactez-nous - Nous sommes à votre écoute"
+  description: "Contactez notre équipe pour toutes vos questions. Nous sommes disponibles par téléphone, email ou visitez-nous à notre adresse."
 navigation:
   title: "Contact"
-  description: "Page de contact de notre site"
-  icon: "heroicons:contact"
+  description: "Page de contact"
+  icon: "heroicons:envelope"
 ---
 
-::callout
+::contact
 #title
-Please be careful!
-#default
-Using MDC & Vue components is addictive.
+Contactez-nous
+
+#description
+Nous sommes là pour répondre à toutes vos questions.
+
+#address_title
+Adresse
+
+#address_details
+105 Av. Jean Jaurès bâtiment B1<br>
+69600 Oullins-Pierre-Bénite, France
+
+#email_title
+Email
+
+#email_details
+contact@numorning.com
+
+#phone_title
+Téléphone
+
+#phone_details
++33 4 78 57 90 28
 ::

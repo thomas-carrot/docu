@@ -1,13 +1,14 @@
 ---
-title: "FAQ"
-description: "Questions fréquemment posées"
+title: FAQ
+description: Questions fréquemment posées
 seo:
-  title: "FAQ - Questions fréquemment posées"
-  description: "Trouvez les réponses aux questions les plus courantes sur nos produits, livraisons, paiements et modalités de commande."
+  title: FAQ - Questions fréquemment posées
+  description: Trouvez les réponses aux questions les plus courantes sur nos
+    produits, livraisons, paiements et modalités de commande.
 navigation:
-  title: "FAQ"
-  description: "Page des questions fréquentes"
-  icon: "heroicons:question-mark-circle"
+  title: FAQ
+  description: Page des questions fréquentes
+  icon: heroicons:question-mark-circle
 ---
 
 ::faq
